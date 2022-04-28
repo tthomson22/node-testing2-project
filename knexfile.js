@@ -12,7 +12,7 @@ const common = {
         filename: './data/pokemon.db3',
       },
     },
-    test: {
+    testing: {
       ...common,
       connection: {
         filename: './data/test.db3',
