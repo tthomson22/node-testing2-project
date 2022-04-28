@@ -1,5 +1,4 @@
-exports.seed = function(knex) {
-    // Deletes ALL existing entries and resets ids
+exports.seed = function(knex, Promise) {
     return knex('pokemon')
       .truncate()
       .then(function() {

@@ -1,15 +1,24 @@
-module.exports = {
+const common = {
+    client: 'sqlite3',
+    useNullAsDefault: true,
+    migrations: { directory: './data/migrations' },
+    seeds: { directory: './data/seeds' },
+  }
+  
+  module.exports = {
     development: {
-        client: 'sqlite3',
-        useNullAsDefault: true,
+      ...common,
+      connection: {
+        filename: './data/pokemon.db3',
+      },
     },
-    connection: {
-        filename: './data/jokes.db3'
+    test: {
+      ...common,
+      connection: {
+        filename: './data/test.db3',
+      },
     },
-    migrations: { 
-        directory: './data/migrations'
+    production: {
+  
     },
-    seeds: {
-        directory: './data/seeds'
-    },
-}
+  };
